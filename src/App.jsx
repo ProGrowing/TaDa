@@ -55,7 +55,7 @@ function App() {
   return (
     <TaskProvider>
       {user ? (
-        <div className="min-h-screen flex flex-col bg-[#F4F6FA]">
+        <div className="min-h-screen w-full min-w-0 overflow-x-hidden flex flex-col bg-[#F4F6FA] pt-16 xl:pt-0">
           <Header user={user} onLogout={handleLogout} onNavigate={setCurrentPage} currentPage={currentPage} />
           
           {currentPage === 'dashboard' ? (

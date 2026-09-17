@@ -15,7 +15,7 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('Monthly');
 
   return (
-    <div className="min-h-screen bg-[#F4F6FA] text-slate-700 flex flex-col xl:flex-row font-sans xl:pl-20">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#F4F6FA] text-slate-700 flex flex-col xl:flex-row font-sans xl:pl-20">
       
       <main className="flex-1 min-w-0 p-4 sm:p-6 lg:p-8 space-y-6 overflow-y-auto">
         
@@ -221,7 +221,7 @@ export default function Dashboard() {
       </main>
 
      
-      <aside className="w-full xl:w-80 xl:shrink-0 bg-white border-t xl:border-t-0 xl:border-l border-slate-200/80 mt-3 p-4 sm:p-6 space-y-6 shadow-xs">
+      <aside className="w-full min-w-0 xl:w-80 xl:shrink-0 bg-white border-t xl:border-t-0 xl:border-l border-slate-200/80 mt-3 p-4 sm:p-6 space-y-6 shadow-xs">
         
         <div>
           <div className="flex items-center justify-between mb-4">

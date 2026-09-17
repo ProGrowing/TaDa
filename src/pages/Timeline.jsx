@@ -43,11 +43,11 @@ export default function Timeline() {
             </div>
           </div>
         </div>
-
+        {/* hello */}
         <div className="p-4 sm:p-6 flex-1 min-w-0 max-w-full flex flex-col xl:flex-row gap-6 overflow-x-hidden relative">
           
-          <div className="w-full max-w-full overflow-x-auto pb-2 xl:overflow-visible xl:w-64 xl:pb-0 shrink-0 z-10">
-            <div className="w-max min-w-[280px] xl:w-64 xl:min-w-0 space-y-4">
+          <div className="w-full max-w-full overflow-visible pb-2 xl:overflow-visible xl:w-64 xl:pb-0 shrink-0 z-10">
+            <div className="w-full min-w-0 xl:w-64 space-y-4">
             <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-xs flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-5 h-5 rounded-md bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">
@@ -159,7 +159,7 @@ export default function Timeline() {
               
               <div className="h-10 relative flex items-center">
           
-                <div className="absolute left-[18%] w-44 bg-indigo-500 text-white p-1 rounded-full flex items-center justify-between pl-3 pr-1 text-xs font-semibold shadow-md shadow-indigo-500/20">
+                <div className="absolute lg:left-[18%] w-44 bg-indigo-500 text-white p-1 rounded-full flex items-center justify-between pl-3 pr-1 text-xs font-semibold shadow-md shadow-indigo-500/20">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-white"></span>
                     <span>Profile</span>
@@ -197,7 +197,7 @@ export default function Timeline() {
             
               <div className="h-10 relative flex items-center">
               
-                <div className="absolute left-[13%] w-40 bg-emerald-400/30 text-emerald-700 border border-emerald-300 p-1 rounded-full flex items-center justify-between pl-3 pr-1 text-xs font-semibold">
+                <div className="absolute left-[30%] lg:left-[80%] w-40 bg-emerald-400/30 text-emerald-700 border border-emerald-300 p-1 rounded-full flex items-center justify-between pl-3 pr-1 text-xs font-semibold">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                     <span className="bg-emerald-400 text-white px-2 py-0.5 rounded-full">Login</span>
@@ -258,7 +258,7 @@ export default function Timeline() {
               
               <div className="h-10 relative flex items-center">
                 
-                <div className="absolute left-[24%] w-60 bg-sky-400/30 text-sky-700 border border-sky-300 p-1 rounded-full flex items-center justify-between pl-3 pr-1 text-xs font-semibold">
+                <div className="absolute lg:left-[24%] w-60 bg-sky-400/30 text-sky-700 border border-sky-300 p-1 rounded-full flex items-center justify-between pl-3 pr-1 text-xs font-semibold">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-sky-500"></span>
                     <span className="bg-sky-400 text-white px-3 py-0.5 rounded-full">Our Portfolio</span>
@@ -301,7 +301,7 @@ export default function Timeline() {
             </div>
 
            
-            <div className="absolute top-24 left-[12%] bg-white p-5 rounded-3xl shadow-2xl border border-slate-100 w-64 z-30">
+            <div className="absolute top-24 lg:left-[12%] bg-white p-5 rounded-3xl shadow-2xl border border-slate-100 w-64 z-30">
               <h3 className="text-sm font-bold text-slate-800 mb-4">Complete Task</h3>
 
             

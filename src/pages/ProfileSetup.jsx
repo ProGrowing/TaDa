@@ -69,13 +69,13 @@ export default function ProfileSetup({ onComplete }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] flex flex-col justify-between p-4 sm:p-6 lg:p-8 font-sans">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#F8FAFC] flex flex-col justify-between p-4 sm:p-6 lg:p-8 font-sans">
       
-      <span className="text-xs font-semibold text-slate-400 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200/80">
+      <span className="text-xs font-semibold text-slate-400 bg-slate-100 lg:w-[30%] justify-center lg:ml-35 px-3 py-1.5 mb-3 rounded-full border border-slate-200/80">
         Step {currentStep} of 3
       </span>
      
-      <div className="max-w-5xl w-full mx-auto bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50 overflow-hidden flex flex-col md:flex-row my-auto">
+      <div className="max-w-5xl w-full min-w-0 mx-auto bg-white rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50 overflow-hidden flex flex-col md:flex-row my-auto">
         
         <div className="w-full md:w-80 bg-slate-900 text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
         
@@ -161,7 +161,7 @@ export default function ProfileSetup({ onComplete }) {
         </div>
 
        
-        <div className="flex-1 p-6 sm:p-10 flex flex-col justify-between bg-white">
+        <div className="flex-1 min-w-0 p-6 sm:p-10 flex flex-col justify-between bg-white">
           <form onSubmit={handleNext} className="space-y-6">
             
             {currentStep === 1 && (
@@ -223,7 +223,7 @@ export default function ProfileSetup({ onComplete }) {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder="Jane Doe"
-                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                     />
                   </div>
 
@@ -240,7 +240,7 @@ export default function ProfileSetup({ onComplete }) {
                         value={formData.username}
                         onChange={handleChange}
                         placeholder="janedoe"
-                        className="w-full bg-slate-50/60 border border-slate-200 rounded-xl pl-8 pr-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                        className="w-full bg-slate-50/60 border border-slate-200 rounded-xl pl-8 pr-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                       />
                     </div>
                   </div>
@@ -255,7 +255,7 @@ export default function ProfileSetup({ onComplete }) {
                       value={formData.role}
                       onChange={handleChange}
                       placeholder="e.g. Front-end Developer"
-                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                     />
                   </div>
 
@@ -265,7 +265,7 @@ export default function ProfileSetup({ onComplete }) {
                       name="department"
                       value={formData.department}
                       onChange={handleChange}
-                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                     >
                       <option value="Engineering">Engineering</option>
                       <option value="Design">Design</option>
@@ -284,7 +284,7 @@ export default function ProfileSetup({ onComplete }) {
                     value={formData.bio}
                     onChange={handleChange}
                     placeholder="Briefly describe what you work on..."
-                    className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition resize-none"
+                    className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition resize-none"
                   />
                 </div>
               </div>
@@ -305,7 +305,7 @@ export default function ProfileSetup({ onComplete }) {
                       name="timezone"
                       value={formData.timezone}
                       onChange={handleChange}
-                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl pl-10 pr-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                      className="w-full bg-slate-50/60 border border-slate-200 rounded-xl pl-10 pr-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                     >
                       <option value="UTC+01:00 (WAT)">UTC+01:00 (West Africa Time)</option>
                       <option value="UTC+00:00 (GMT)">UTC+00:00 (Greenwich Mean Time)</option>
@@ -325,7 +325,7 @@ export default function ProfileSetup({ onComplete }) {
                         name="workStart"
                         value={formData.workStart}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                        className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                       />
                     </div>
                     <div>
@@ -335,7 +335,7 @@ export default function ProfileSetup({ onComplete }) {
                         name="workEnd"
                         value={formData.workEnd}
                         onChange={handleChange}
-                        className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                        className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                       />
                     </div>
                   </div>
@@ -349,7 +349,7 @@ export default function ProfileSetup({ onComplete }) {
                     value={formData.portfolioUrl}
                     onChange={handleChange}
                     placeholder="https://github.com/username"
-                    className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                    className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                   />
                 </div>
               </div>
@@ -368,7 +368,7 @@ export default function ProfileSetup({ onComplete }) {
                       <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600">
                         <Bell size={18} />
                       </div>
-                      <div>
+                      <div className="min-w-0 max-w-full">
                         <p className="text-xs font-bold text-slate-800">Email Notifications</p>
                         <p className="text-[11px] text-slate-500">Receive activity digests and task assignments.</p>
                       </div>
@@ -387,7 +387,7 @@ export default function ProfileSetup({ onComplete }) {
                       <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600">
                         <Clock size={18} />
                       </div>
-                      <div>
+                      <div className="min-w-0 max-w-full">
                         <p className="text-xs font-bold text-slate-800">Desktop Push Alerts</p>
                         <p className="text-[11px] text-slate-500">Instant desktop popups for direct mentions.</p>
                       </div>

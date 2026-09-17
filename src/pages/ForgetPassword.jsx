@@ -29,12 +29,12 @@ export default function ForgetPassword({ onNavigate }) {
   
 
   return (
-    <div className="min-h-screen bg-[#F4F6FA] flex flex-col items-center justify-center p-4 font-sans">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#F4F6FA] flex flex-col items-center justify-center p-4 font-sans">
       
      
       <div className="flex justify-center gap-2 items-center mb-6">
         <img className="h-12 w-auto object-contain mix-blend-multiply" src={logo} alt="tada logo" />
-        <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">tada</span>
+        <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">TaDa</span>
       </div>
 
      
@@ -70,7 +70,7 @@ export default function ForgetPassword({ onNavigate }) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@example.com"
-                    className="w-full bg-slate-50/50 border border-slate-200/90 rounded-xl px-4 py-3 text-sm text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 focus:bg-white transition placeholder:text-slate-400"
+                    className="w-full bg-slate-50/50 border border-slate-200/90 rounded-xl px-4 py-3 text-base sm:text-sm text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 focus:bg-white transition placeholder:text-slate-400"
                   />
                   <Mail size={18} className="absolute right-3.5 top-3.5 text-slate-400 pointer-events-none" />
                 </div>
