@@ -46,8 +46,8 @@ export default function Settings({ user }) {
           <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full ring-4 ring-white shadow-lg overflow-hidden bg-white shrink-0">
               <img
-                src={user?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80'}
-                alt={profileName || 'User profile'}
+                src={String(user?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80')}
+                alt={String(profileName || 'User profile')}
                 className="w-full h-full object-cover"
               />
             </div>
