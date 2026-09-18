@@ -17,12 +17,12 @@ export default function ProfileSetup({ onComplete }) {
   const [formData, setFormData] = useState({
     fullName: '',
     username: '',
-    role: 'Developer',
-    department: 'Engineering',
+    role: '',
+    department: '',
     bio: '',
-    timezone: 'UTC+01:00 (WAT)',
-    workStart: '09:00',
-    workEnd: '17:00',
+    timezone: '',
+    workStart: '',
+    workEnd: '',
     portfolioUrl: '',
     notifyEmail: true,
     notifyDesktop: true,
@@ -222,7 +222,7 @@ export default function ProfileSetup({ onComplete }) {
                       required
                       value={formData.fullName}
                       onChange={handleChange}
-                      placeholder="Jane Doe"
+                      placeholder="Omotolani"
                       className="w-full bg-slate-50/60 border border-slate-200 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                     />
                   </div>
@@ -239,7 +239,7 @@ export default function ProfileSetup({ onComplete }) {
                         required
                         value={formData.username}
                         onChange={handleChange}
-                        placeholder="janedoe"
+                        placeholder="Omotolani"
                         className="w-full bg-slate-50/60 border border-slate-200 rounded-xl pl-8 pr-3.5 py-2.5 text-base sm:text-xs text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
                       />
                     </div>

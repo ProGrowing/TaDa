@@ -4,6 +4,9 @@ import { Mail, UploadCloud } from 'lucide-react';
 export default function Settings({ user }) {
   const [activeTab, setActiveTab] = useState('My details');
 
+  const profileName = user?.fullName || user?.name || '';
+  const nameParts = profileName.trim().split(/\s+/).filter(Boolean);
+
   const tabs = [
     'My details',
     'Profile',
@@ -16,10 +19,10 @@ export default function Settings({ user }) {
   ];
 
   const [formData, setFormData] = useState({
-    firstName: 'Killan',
-    lastName: 'James',
-    email: 'killanjames@gmail.com',
-    role: 'Product Designer',
+    firstName: nameParts[0] || '',
+    lastName: nameParts.slice(1).join(' '),
+    email: user?.email || '',
+    role: user?.role || '',
   });
 
   const handleChange = (e) => {
@@ -43,8 +46,8 @@ export default function Settings({ user }) {
           <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full ring-4 ring-white shadow-lg overflow-hidden bg-white shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80"
-                alt="Killan James"
+                src={user?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80'}
+                alt={profileName || 'User profile'}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -109,6 +112,7 @@ export default function Settings({ user }) {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
+                  placeholder="Killan"
                   className="w-full bg-white border border-slate-200/90 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
                 />
               </div>
@@ -122,6 +126,7 @@ export default function Settings({ user }) {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
+                  placeholder="James"
                   className="w-full bg-white border border-slate-200/90 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
                 />
               </div>
@@ -138,6 +143,7 @@ export default function Settings({ user }) {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="killanjames@gmail.com"
                   className="w-full bg-white border border-slate-200/90 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
                 />
                 <Mail size={16} className="absolute left-3.5 top-3 text-slate-400" />
@@ -168,6 +174,7 @@ export default function Settings({ user }) {
                 name="role"
                 value={formData.role}
                 onChange={handleChange}
+                placeholder="Product Designer"
                 className="w-full bg-white border border-slate-200/90 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
               />
             </div>
