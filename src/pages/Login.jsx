@@ -19,8 +19,6 @@ export default function Login({ onLoginSuccess, onNavigate }) {
   e.preventDefault();
 
   if (isSignUp) {
-    console.log('Signing up with:', formData);
-
     if (onLoginSuccess) {
       onLoginSuccess({
         ...formData,
@@ -29,7 +27,6 @@ export default function Login({ onLoginSuccess, onNavigate }) {
     }
 
   } else {
-    console.log('Logging in with:', formData.email, formData.password);
     if (onLoginSuccess) {
       onLoginSuccess({ email: formData.email, name: formData.name || 'User' });
     }
