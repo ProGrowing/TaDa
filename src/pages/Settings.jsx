@@ -1,18 +1,46 @@
 import { useState } from 'react';
 import { Mail, UploadCloud } from 'lucide-react';
 
+const DEFAULT_AVATAR_URL = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
+const TRUSTED_AVATAR_HOSTS = new Set([
+  'images.unsplash.com',
+  'unsplash.com',
+]);
+
 const getSafeAvatarUrl = (url) => {
-  if (!url || typeof url !== 'string') return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
-  if (url.startsWith('/') || url.startsWith('blob:')) {
-    return url;
+  if (typeof url !== 'string') return DEFAULT_AVATAR_URL;
+
+  const normalized = url.trim();
+  if (!normalized) return DEFAULT_AVATAR_URL;
+
+  const lowered = normalized.toLowerCase();
+  if (
+    lowered.startsWith('javascript:') ||
+    lowered.startsWith('data:') ||
+    lowered.startsWith('vbscript:') ||
+    lowered.startsWith('file:')
+  ) {
+    return DEFAULT_AVATAR_URL;
   }
+
+  if (normalized.startsWith('blob:')) {
+    return normalized;
+  }
+
+  if (normalized.startsWith('/') && !normalized.startsWith('//')) {
+    return normalized;
+  }
+
   try {
-    const parsedUrl = new URL(url);
-    if (parsedUrl.protocol === 'https:') return parsedUrl.href;
+    const parsedUrl = new URL(normalized);
+    if (parsedUrl.protocol !== 'https:') return DEFAULT_AVATAR_URL;
+    if (!TRUSTED_AVATAR_HOSTS.has(parsedUrl.hostname)) return DEFAULT_AVATAR_URL;
+    return parsedUrl.href;
   } catch {
     // Fall through to the default avatar for malformed URLs.
   }
-  return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
+
+  return DEFAULT_AVATAR_URL;
 };
 
 export default function Settings({ user }) {
