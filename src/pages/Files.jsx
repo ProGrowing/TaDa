@@ -63,13 +63,9 @@ export default function Files({ user, onLogout, onNavigate }) {
       avatars: ['https://i.pravatar.cc/100?img=11', 'https://i.pravatar.cc/100?img=12', 'https://i.pravatar.cc/100?img=13']
     }
   ];
-
+ 
   return (
-    <div className="min-h-screen max-w-full overflow-x-hidden bg-[#F4F6FA] text-slate-700 flex flex-col xl:flex-row font-sans">
-      
-      <aside className="w-full xl:w-20 bg-white border-r border-slate-200/80 flex xl:flex-col items-center justify-between p-4 xl:py-6 shadow-sm z-20">
-        <div className="flex xl:flex-col items-center gap-6 xl:gap-8 w-full justify-between xl:justify-start"></div>
-      </aside>
+    <div className="min-h-screen sm:max-w-full overflow-x-hidden bg-[#F4F6FA] text-slate-700 flex flex-col xl:flex-row font-sans xl:pl-20">
 
       <div className="flex-1 flex flex-col min-w-0">
         

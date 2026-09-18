@@ -59,10 +59,10 @@ export default function ResetCode({ email = 'user@example.com', onNavigate }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F6FA] flex flex-col items-center justify-center p-4 font-sans">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#F4F6FA] flex flex-col items-center justify-center p-4 font-sans">
       <div className="flex justify-center gap-2 items-center mb-6">
         <img className="h-12 w-auto object-contain mix-blend-multiply" src={logo} alt="tada logo" />
-        <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">tada</span>
+        <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">TaDa</span>
       </div>
      
       <div className="w-full max-w-md bg-white rounded-3xl border border-slate-200/70 shadow-sm p-8 sm:p-10">

@@ -19,8 +19,6 @@ export default function Login({ onLoginSuccess, onNavigate }) {
   e.preventDefault();
 
   if (isSignUp) {
-    console.log('Signing up with:', formData);
-
     if (onLoginSuccess) {
       onLoginSuccess({
         ...formData,
@@ -29,7 +27,6 @@ export default function Login({ onLoginSuccess, onNavigate }) {
     }
 
   } else {
-    console.log('Logging in with:', formData.email, formData.password);
     if (onLoginSuccess) {
       onLoginSuccess({ email: formData.email, name: formData.name || 'User' });
     }
@@ -38,10 +35,10 @@ export default function Login({ onLoginSuccess, onNavigate }) {
 
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="flex justify-center gap-2 items-center">
           <img className="h-12 w-auto object-contain mix-blend-multiply" src={logo} alt="tada logo" />
-          <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">tada</span>
+          <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">TaDa</span>
         </div>
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
        
@@ -70,7 +67,7 @@ export default function Login({ onLoginSuccess, onNavigate }) {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Jane Doe"
-                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-slate-800 text-sm"
+                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-slate-800 text-base sm:text-sm"
                   />
                 </div>
               </div>
@@ -89,7 +86,7 @@ export default function Login({ onLoginSuccess, onNavigate }) {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-slate-800 text-sm"
+                  className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-slate-800 text-base sm:text-sm"
                 />
               </div>
             </div>
@@ -115,7 +112,7 @@ export default function Login({ onLoginSuccess, onNavigate }) {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-4 py-2.5 pr-11 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-slate-800 text-sm"
+                  className="w-full px-4 py-2.5 pr-11 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition text-slate-800 text-base sm:text-sm"
                 />
                 <button
                   type="button"

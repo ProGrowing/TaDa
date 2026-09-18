@@ -1,8 +1,53 @@
 import { useState } from 'react';
 import { Mail, UploadCloud } from 'lucide-react';
 
+// const DEFAULT_AVATAR_URL = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
+// const TRUSTED_AVATAR_HOSTS = new Set([
+//   'images.unsplash.com',
+//   'unsplash.com',
+// ]);
+
+// const getSafeAvatarUrl = (url) => {
+//   if (typeof url !== 'string') return DEFAULT_AVATAR_URL;
+
+//   const normalized = url.trim();
+//   if (!normalized) return DEFAULT_AVATAR_URL;
+
+//   const lowered = normalized.toLowerCase();
+//   if (
+//     lowered.startsWith('javascript:') ||
+//     lowered.startsWith('data:') ||
+//     lowered.startsWith('vbscript:') ||
+//     lowered.startsWith('file:')
+//   ) {
+//     return DEFAULT_AVATAR_URL;
+//   }
+
+//   if (normalized.startsWith('blob:')) {
+//     return normalized;
+//   }
+
+//   if (normalized.startsWith('/') && !normalized.startsWith('//')) {
+//     return normalized;
+//   }
+
+//   try {
+//     const parsedUrl = new URL(normalized);
+//     if (parsedUrl.protocol !== 'https:') return DEFAULT_AVATAR_URL;
+//     if (!TRUSTED_AVATAR_HOSTS.has(parsedUrl.hostname)) return DEFAULT_AVATAR_URL;
+//     return parsedUrl.href;
+//   } catch {
+    
+//   }
+
+//   return DEFAULT_AVATAR_URL;
+// };
+
 export default function Settings({ user }) {
   const [activeTab, setActiveTab] = useState('My details');
+  
+  const profileName = user?.fullName || user?.name || '';
+  const nameParts = profileName.trim().split(/\s+/).filter(Boolean);
 
   const tabs = [
     'My details',
@@ -16,10 +61,10 @@ export default function Settings({ user }) {
   ];
 
   const [formData, setFormData] = useState({
-    firstName: 'Killan',
-    lastName: 'James',
-    email: 'killanjames@gmail.com',
-    role: 'Product Designer',
+    firstName: nameParts[0] || '',
+    lastName: nameParts.slice(1).join(' '),
+    email: user?.email || '',
+    role: user?.role || '',
   });
 
   const handleChange = (e) => {
@@ -27,7 +72,7 @@ export default function Settings({ user }) {
   };
 
   return (
-    <div className="flex-1 bg-[#F4F6FA] p-4 sm:p-6 lg:p-8 font-sans">
+    <div className="flex-1 w-full min-w-0 max-w-full overflow-x-hidden bg-[#F4F6FA] p-4 sm:p-6 lg:p-8 font-sans">
       <div className="max-w-6xl mx-auto flex flex-col gap-6">
         
         <div className="relative w-full h-44 sm:h-52 md:h-60 rounded-2xl overflow-hidden bg-gradient-to-r from-teal-400 via-indigo-500 to-sky-400 shadow-sm">
@@ -42,9 +87,14 @@ export default function Settings({ user }) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 -mt-14 sm:-mt-16 px-4 sm:px-6 relative z-10">
           <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full ring-4 ring-white shadow-lg overflow-hidden bg-white shrink-0">
-              <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80"
-                alt="Killan James"
+              {/* <img
+                src={getSafeAvatarUrl(user?.avatar)}
+                alt="User profile"
+                className="w-full h-full object-cover"
+              /> */}
+              <img src={user?.avatar && (user.avatar.startsWith('http://') || user.avatar.startsWith('https://'))
+                ? user.avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80'}
+                alt={profileName || 'User profile'}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -109,6 +159,7 @@ export default function Settings({ user }) {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
+                  placeholder="Killan"
                   className="w-full bg-white border border-slate-200/90 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
                 />
               </div>
@@ -122,6 +173,7 @@ export default function Settings({ user }) {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
+                  placeholder="James"
                   className="w-full bg-white border border-slate-200/90 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
                 />
               </div>
@@ -138,6 +190,7 @@ export default function Settings({ user }) {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="killanjames@gmail.com"
                   className="w-full bg-white border border-slate-200/90 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
                 />
                 <Mail size={16} className="absolute left-3.5 top-3 text-slate-400" />
@@ -168,6 +221,7 @@ export default function Settings({ user }) {
                 name="role"
                 value={formData.role}
                 onChange={handleChange}
+                placeholder="Product Designer"
                 className="w-full bg-white border border-slate-200/90 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition shadow-sm"
               />
             </div>

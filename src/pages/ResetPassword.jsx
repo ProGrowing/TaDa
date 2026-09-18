@@ -46,10 +46,10 @@ export default function ResetPassword({ onNavigate }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F4F6FA] flex flex-col items-center justify-center p-4 font-sans">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#F4F6FA] flex flex-col items-center justify-center p-4 font-sans">
       <div className="flex justify-center gap-2 items-center mb-6">
         <img className="h-12 w-auto object-contain mix-blend-multiply" src={logo} alt="tada logo" />
-        <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">tada</span>
+        <span className="text-3xl font-extrabold tracking-normal text-slate-700 font-sans">TaDa</span>
       </div>
     
       <div className="w-full max-w-md bg-white rounded-3xl border border-slate-200/70 shadow-sm p-8 sm:p-10">
@@ -84,7 +84,7 @@ export default function ResetPassword({ onNavigate }) {
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="••••••••"
-                    className="w-full bg-slate-50/50 border border-slate-200/90 rounded-xl px-4 py-3 text-sm text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 focus:bg-white transition placeholder:text-slate-400 pr-10"
+                    className="w-full bg-slate-50/50 border border-slate-200/90 rounded-xl px-4 py-3 text-base sm:text-sm text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 focus:bg-white transition placeholder:text-slate-400 pr-10"
                   />
                   <button
                     type="button"
@@ -108,7 +108,7 @@ export default function ResetPassword({ onNavigate }) {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     placeholder="••••••••"
-                    className="w-full bg-slate-50/50 border border-slate-200/90 rounded-xl px-4 py-3 text-sm text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 focus:bg-white transition placeholder:text-slate-400 pr-10"
+                    className="w-full bg-slate-50/50 border border-slate-200/90 rounded-xl px-4 py-3 text-base sm:text-sm text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 focus:bg-white transition placeholder:text-slate-400 pr-10"
                   />
                   <button
                     type="button"
