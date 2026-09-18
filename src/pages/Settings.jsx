@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { Mail, UploadCloud } from 'lucide-react';
 
+const getSafeAvatarUrl = (url) => {
+  if (!url || typeof url !== 'string') return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) {
+    return url;
+  }
+  return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
+};
+
 export default function Settings({ user }) {
   const [activeTab, setActiveTab] = useState('My details');
-
+  
   const profileName = user?.fullName || user?.name || '';
   const nameParts = profileName.trim().split(/\s+/).filter(Boolean);
 
@@ -46,8 +54,8 @@ export default function Settings({ user }) {
           <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full ring-4 ring-white shadow-lg overflow-hidden bg-white shrink-0">
               <img
-                src={String(user?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80')}
-                alt={String(profileName || 'User profile')}
+                src={getSafeAvatarUrl(user?.avatar)}
+                alt={profileName ? String(profileName) : 'User profile'}
                 className="w-full h-full object-cover"
               />
             </div>
