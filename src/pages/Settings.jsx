@@ -3,8 +3,14 @@ import { Mail, UploadCloud } from 'lucide-react';
 
 const getSafeAvatarUrl = (url) => {
   if (!url || typeof url !== 'string') return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
-  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('/')) {
+  if (url.startsWith('/') || url.startsWith('blob:')) {
     return url;
+  }
+  try {
+    const parsedUrl = new URL(url);
+    if (parsedUrl.protocol === 'https:') return parsedUrl.href;
+  } catch {
+    // Fall through to the default avatar for malformed URLs.
   }
   return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80';
 };
@@ -55,7 +61,7 @@ export default function Settings({ user }) {
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full ring-4 ring-white shadow-lg overflow-hidden bg-white shrink-0">
               <img
                 src={getSafeAvatarUrl(user?.avatar)}
-                alt={profileName ? String(profileName) : 'User profile'}
+                alt="User profile"
                 className="w-full h-full object-cover"
               />
             </div>
