@@ -87,9 +87,14 @@ export default function Settings({ user }) {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 -mt-14 sm:-mt-16 px-4 sm:px-6 relative z-10">
           <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4">
             <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full ring-4 ring-white shadow-lg overflow-hidden bg-white shrink-0">
-              <img
+              {/* <img
                 src={getSafeAvatarUrl(user?.avatar)}
                 alt="User profile"
+                className="w-full h-full object-cover"
+              /> */}
+              <img src={user?.avatar && (user.avatar.startsWith('http://') || user.avatar.startsWith('https://'))
+                ? user.avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80'}
+                alt={profileName || 'User profile'}
                 className="w-full h-full object-cover"
               />
             </div>
