@@ -41,8 +41,8 @@ export default function Messages({ user }) {
   ];
 
   return (
-    <div className="flex-1 bg-[#F4F6FA] p-4 sm:p-6 jusify-center lg:ml-20 font-sans">
-      <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[780px]">
+    <div className="flex-1 w-full min-w-0 max-w-full overflow-x-hidden bg-[#F4F6FA] p-4 sm:p-6 jusify-center lg:ml-20 font-sans">
+      <div className="w-full min-w-0 max-w-full bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[780px]">
         
         
         <div className="lg:col-span-3 border-r border-slate-100 flex flex-col h-full bg-white">

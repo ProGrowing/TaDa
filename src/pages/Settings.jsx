@@ -27,7 +27,7 @@ export default function Settings({ user }) {
   };
 
   return (
-    <div className="flex-1 bg-[#F4F6FA] p-4 sm:p-6 lg:p-8 font-sans">
+    <div className="flex-1 w-full min-w-0 max-w-full overflow-x-hidden bg-[#F4F6FA] p-4 sm:p-6 lg:p-8 font-sans">
       <div className="max-w-6xl mx-auto flex flex-col gap-6">
         
         <div className="relative w-full h-44 sm:h-52 md:h-60 rounded-2xl overflow-hidden bg-gradient-to-r from-teal-400 via-indigo-500 to-sky-400 shadow-sm">

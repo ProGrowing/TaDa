@@ -165,7 +165,7 @@ export default function TaskBoard({ user, onLogout, onNavigate }) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F4F6FA] text-slate-700 flex flex-col xl:flex-row font-sans xl:pl-20">
+    <div className="min-h-screen w-full min-w-0 max-w-full overflow-x-hidden bg-[#F4F6FA] text-slate-700 flex flex-col xl:flex-row font-sans xl:pl-20">
       
       <div className="flex-1 flex flex-col min-w-0">
 

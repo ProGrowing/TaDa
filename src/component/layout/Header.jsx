@@ -66,7 +66,7 @@ export default function Header({ user, onLogout, onNavigate, currentPage }) {
         </button>
 
         <div className="relative w-full max-w-98 min-w-0">
-          <input type="text" placeholder="Search anything..." className="w-full bg-slate-50 pl-10 pr-4 py-2 rounded-full text-sm border border-slate-200 shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-slate-700 placeholder:text-slate-400" />
+          <input type="text" placeholder="Search anything..." className="w-full min-w-0 bg-slate-50 pl-10 pr-4 py-2 rounded-full text-base sm:text-sm border border-slate-200 shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-slate-700 placeholder:text-slate-400" />
           <Search className="absolute left-3.5 top-2.5 text-slate-400" size={17} />
         </div>
 
@@ -81,7 +81,7 @@ export default function Header({ user, onLogout, onNavigate, currentPage }) {
               <p className="font-bold text-slate-800">{user?.name || 'Zeliahu'}</p>
               <p className="text-slate-400">Web Developer</p>
             </div>
-            <ChevronDown size={14} className="text-slate-400" />
+            {/* <ChevronDown size={14} className="text-slate-400" /> */}
           </div>
         </div>
         </div>
